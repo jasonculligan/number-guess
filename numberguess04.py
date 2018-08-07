@@ -16,13 +16,13 @@ max = 0
 
 def lose():
     print("Hard luck!  The number I was thinking of was", number)
-    print ("")
+    print("")
     exit()
 
 
 def win():
     print("You Win!")
-    print ("")
+    print("")
     exit()
 
 
@@ -66,7 +66,7 @@ while tries != 0:
             guess = int(input("Your guess: "))
             break
         except:
-            print ("Numbers only please!")
+            print("Numbers only please!")
 
     os.system('cls' if os.name == 'nt' else 'clear')
 
@@ -82,12 +82,14 @@ while tries != 0:
             used.append(guess)
 
     if guess < number:
-        tries -= 1
-        if tries == 0:
-            lose()
-        if tries != 0:
-            print(guess, "is too low, guess higher")
-            # tries -= 1
+        if guess >= 1:
+            tries -= 1
+            if tries == 0:
+                lose()
+            if tries != 0:
+                print(guess, "is too low, guess higher")
+        if guess < 1:
+            print("Aw come on!  That's way too low!")
 
     if guess > number:
         if guess <= max:
