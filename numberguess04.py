@@ -34,7 +34,6 @@ print(" Medium - 2")
 print(" Hard - 3")
 print(" Insane - 4")
 
-
 while True:
     difficulty = input("?: ")
     if difficulty not in ('1', '2', '3', '4'):
@@ -62,7 +61,13 @@ print("")
 while tries != 0:
     if tries < 5:
         print("You have", tries, "tries left.")
-    guess = int(input("Your guess: "))
+    while True:
+        try:
+            guess = int(input("Your guess: "))
+            break
+        except:
+            print ("Numbers only please!")
+
     os.system('cls' if os.name == 'nt' else 'clear')
 
     if guess == number:
