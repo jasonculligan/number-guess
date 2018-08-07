@@ -55,7 +55,7 @@ number = random.randrange(1, max)
 os.system('cls' if os.name == 'nt' else 'clear')
 
 print("I'm thinking of a number between 1 and", max)
-print("See if you can guess it in 5 tries.")
+print("See if you can guess it in under 5 tries.")
 print("")
 
 while tries != 0:
