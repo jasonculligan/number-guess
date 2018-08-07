@@ -4,7 +4,6 @@
 # Jason Culligan
 # 07/08/2018
 
-# import sys
 import os
 import random
 
