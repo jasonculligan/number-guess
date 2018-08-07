@@ -28,10 +28,10 @@ def win():
 os.system('cls' if os.name == 'nt' else 'clear')
 
 print("Select difficulty by entering the number")
-print(" Easy - 1")
-print(" Medium - 2")
-print(" Hard - 3")
-print(" Insane - 4")
+print(" 1 - Easy")
+print(" 2 - Medium")
+print(" 3 - Hard")
+print(" 4 - Insane")
 
 while True:
     difficulty = input("?: ")
