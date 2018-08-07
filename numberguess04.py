@@ -33,18 +33,25 @@ print(" Easy - 1")
 print(" Medium - 2")
 print(" Hard - 3")
 print(" Insane - 4")
-difficulty = int(input("?: "))
-while not (difficulty > 1) or (difficulty < 5):
-    print ("Pick between 1 and 4 please")
-else:
-    if difficulty == 1:
-        max = 10
-    if difficulty == 2:
-        max = 100
-    if difficulty == 3:
-        max = 500
-    if difficulty == 4:
-        max = 1000
+
+
+while True:
+    difficulty = input("?: ")
+    if difficulty not in ('1', '2', '3', '4'):
+        print("Pick between 1 and 4 please")
+    else:
+        break
+
+if difficulty == "1":
+    max = 10
+if difficulty == "2":
+    max = 100
+if difficulty == "3":
+    max = 500
+if difficulty == "4":
+    max = 1000
+
+
 number = random.randrange(1, max)
 os.system('cls' if os.name == 'nt' else 'clear')
 
