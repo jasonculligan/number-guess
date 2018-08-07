@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 
-# Number Guess - guess a number between 1 and 100 in 5 tries
+# Number Guess - guess a number in 5 tries.  Range based on selected difficulty
 # Jason Culligan
-# 06/08/2018
+# 07/08/2018
 
 # import sys
 import os
@@ -10,21 +10,44 @@ import random
 
 used = []
 tries = 5
-max = 100
-number = random.randrange(1, max)
+max = 0
+
 
 
 def lose():
-    print("Hard luck!  The number I was thinking of was", number, "!")
+    print("Hard luck!  The number I was thinking of was", number)
+    print ("")
     exit()
 
 
 def win():
     print("You Win!")
+    print ("")
     exit()
 
 
 os.system('cls' if os.name == 'nt' else 'clear')
+
+print("Select difficulty by entering the number")
+print(" Easy - 1")
+print(" Medium - 2")
+print(" Hard - 3")
+print(" Insane - 4")
+difficulty = int(input("?: "))
+while not (difficulty > 1) or (difficulty < 5):
+    print ("Pick between 1 and 4 please")
+else:
+    if difficulty == 1:
+        max = 10
+    if difficulty == 2:
+        max = 100
+    if difficulty == 3:
+        max = 500
+    if difficulty == 4:
+        max = 1000
+number = random.randrange(1, max)
+os.system('cls' if os.name == 'nt' else 'clear')
+
 print("I'm thinking of a number between 1 and", max)
 print("See if you can guess it in 5 tries.")
 print("")
@@ -55,7 +78,7 @@ while tries != 0:
             # tries -= 1
 
     if guess > number:
-        if guess < max:
+        if guess <= max:
             tries -= 1
             if tries == 0:
                 lose()
