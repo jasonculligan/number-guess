@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
-# Number Guess - guess a number between 1 and 100
-# jasonculligan@gmail.com
+# Number Guess - guess a number between 1 and 100 in 5 tries
+# Jason Culligan
 # 06/08/2018
 
 # import sys
@@ -15,7 +15,7 @@ number = random.randrange(1, max)
 
 
 def lose():
-    print("You twit!  The number was", number, "!")
+    print("Hard luck!  The number I was thinking of was", number, "!")
     exit()
 
 
@@ -25,8 +25,8 @@ def win():
 
 
 os.system('cls' if os.name == 'nt' else 'clear')
-print("I've guessed a number between 1 and", max)
-print("See if you can guess it!")
+print("I'm thinking of a number between 1 and", max)
+print("See if you can guess it in 5 tries.")
 print("")
 
 while tries != 0:
